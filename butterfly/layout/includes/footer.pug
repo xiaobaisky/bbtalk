@@ -1,0 +1,43 @@
+#footer-cont
+  .footer_logo
+    a(href='/' data-pjax-state='')
+      img.entered.loading(alt='Logo' src='https://cdn.jsdelivr.net/gh/xiaobaisky/CDN-BLOG@img/1620475890000.png' data-ll-status='loading')
+
+  .footer_link_group
+    h3= '支持'
+    .footer_link
+      a.footer-icon(target='_blank' rel='noopener' href='https://hexo.io/zh-cn/')= '框架Hexo'
+      a.footer-icon(target='_blank' rel='noopener' href='https://butterfly.js.org/')= '主题Butterfly' 
+      a.footer-icon(target='_blank' rel='noopener' href='https://vercel.com/')= '线路托管vercel'
+  .footer_link_group
+    h3= '联系'
+    .footer_link
+      a.footer-icon(href='mailto:417225230@qq.com' rel='noopener' target='_blank')
+        span= 'Email'
+      a.footer-icon(href='https://cdn.jsdelivr.net/gh/xiaobaisky/CDN-BLOG@img/1618040827000.jpg' rel='noopener' target='_blank')
+        span= 'Wechat'
+      a.footer-icon(href='http://wpa.qq.com/msgrd?v=3&uin=417225230&site=qq&menu=yes' rel='noopener' target='_blank')
+        span= 'QQ'
+  .footer_link_group
+    h3= '导航'
+    .footer_link
+      a.footer-icon(href='/sitenav/' data-pjax-state='')= '网站导航'
+      a.footer-icon(href='/friends/')= '友情链接'
+      a.footer-icon(href='/contact/' data-pjax-state='')= '留言反馈'
+#footer-wrap
+  if theme.footer.owner.enable
+    - var now = new Date()
+    - var nowYear = now.getFullYear()
+    if theme.footer.owner.since && theme.footer.owner.since != nowYear
+      .copyright!= `&copy;${theme.footer.owner.since} - ${nowYear} By ${config.author}`
+    else
+      .copyright!= `&copy;${nowYear} By ${config.author}`
+  if theme.footer.copyright
+    .framework-info
+      span= _p('footer.framework') + ' '
+      a(href='https://hexo.io')= 'Hexo'
+      span.footer-separator |
+      span= _p('footer.theme') + ' '
+      a(href='https://github.com/jerryc127/hexo-theme-butterfly')= 'Butterfly'
+  if theme.footer.custom_text
+    .footer_custom_text!=`${theme.footer.custom_text}`

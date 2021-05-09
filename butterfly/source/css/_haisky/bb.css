@@ -1,0 +1,103 @@
+/* 主页哔哔bb */
+
+#bber-talk {
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+}
+
+@font-face {
+    font-family: 'zangti';
+    /* 字体名自定义即可 */
+    src: url('/fonts/zangti.ttf');
+    /* 字体文件路径 */
+    font-display: swap;
+}
+
+#bber-talk .li-style {
+    width: 100%;
+    height: 25px;
+    color: #e6391a;
+    text-align: center;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.3s;
+    padding-top: 0.5px;
+}
+
+.li-style:hover {
+    color: #49b1f5;
+}
+
+ul,
+li {
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#bbTimeList {
+    background: var(--card-bg);
+    color: var(--hai-font-color);
+    margin-top: 1rem;
+    padding: 0.6rem 1rem 0.5rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+}
+
+#bbTimeList .bber-gotobb.pass {
+    -webkit-animation: 1s passing infinite;
+    animation: 1s passing infinite;
+}
+
+#bbTimeList .bber-gotobb {
+    line-height: 25px;
+    margin-left: 8px;
+    margin-top: 1px;
+    transition: 0.3s;
+}
+
+@-webkit-keyframes passing {
+    0% {
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    50% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateX(50%);
+        transform: translateX(50%);
+        opacity: 0;
+    }
+}
+
+@keyframes passing {
+    0% {
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    50% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateX(50%);
+        transform: translateX(50%);
+        opacity: 0;
+    }
+}
+
+.icon-bb-logo:before {
+    margin-left: -5px;
+}

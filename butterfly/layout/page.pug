@@ -1,0 +1,22 @@
+extends includes/layout.pug
+
+block content
+  #page
+    case page.type
+      when 'tags'
+        include includes/page/tags.pug
+      when 'friends'
+        include includes/page/friends.pug
+      when 'sitenav'
+        include includes/page/sitenav.pug
+      when 'categories'
+        include includes/page/categories.pug
+      when 'bb'
+        include includes/page/bb.pug
+      default
+        include includes/page/default-page.pug
+
+
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
